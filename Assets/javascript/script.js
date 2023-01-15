@@ -27,7 +27,7 @@ $(function() {
     if(currentRow.id < currentHour) {
       rowDiv.addClass('past');
     }
-    if(currentRow.id > currentHour) {
+    else if(currentRow.id > currentHour) {
       rowDiv.addClass('future');
     }
     else{
@@ -51,18 +51,18 @@ function getTime () {
   var currentDate = new Date();
   var month = getMonth(currentDate.getMonth());
   var dayTime = "AM";
-  var currentDay = month + '' + currentDate.getDate() + ',' + currentDate.getFullYear();
+  var currentDay = month + '' + currentDate.getDate() + ', ' + currentDate.getFullYear();
 
   var hourNow = currentDate.getHours();
   if(hourNow > 12) {
     dayTime = 'PM';
-    // hourNow -=12;
+    hourNow -=12;
   }
 
   var minuteNow = String(currentDate.getMinutes()).padStart(2.0);
   var timeNow = hourNow + ':' + minuteNow + '' + dayTime;
 
-  return currentDay + " - " + timeNow;
+  return currentDay + " " + timeNow;
 }
 
 getMonth = (thisMonth) => {
