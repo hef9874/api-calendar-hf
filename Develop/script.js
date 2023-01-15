@@ -1,26 +1,45 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(saveButton = document.querySelectorAll('.btn saveBtn col-2 col-md-1'));
 
 $(function() {
-    saveButton.addEventListener(click, save)
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  //
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
+  //Get day and time
+  var time = getTime();
+
+  var showCurrent = $('#currentDay');
+  showCurrent.text(time);
+
+  //setting hours 
+  var hour = new Date();
+  var currentHour = String('hour-' + String(hour.getHours()).padStart(2.0));
+
+  //setting classes to rows 
+  var rows = $('.container-fluid');
+  var hourContainer = rows.children('.row');
+
+  for(let i=0; i < hourContainer.length; i++) {
+    var currentRow = hourContainer[i];
+    //get from JSON
+    var calendarContent = JSON.parse(localStorage.getItem(currentRow.id));
+    currentTextArea = $(currentRow).children('textarea').text(calendarContent)
+
+    var rowDiv = $(currentRow);
+    if(currentRow.id < currentHour) {
+      rowDiv.addClass('past');
+    }
+    if(currentRow.id > currentHour) {
+      rowDiv.addClass('future');
+    }
+    else{
+      rowDiv.addClass('present');
+    }
+  }
+
+  hourContainer.children("button").on('click', event => {
+    var addButton = $(event.target).parent();
+
+    $('.content')
+  })
+
 });
+
