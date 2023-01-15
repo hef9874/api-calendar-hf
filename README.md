@@ -7,6 +7,6 @@ This is meant to be used by office workers that want to save appointments on the
 ### Appearance 
 Below are shots of the app in use:
 
-![Top of the page:](Assets/Screen Shot 2023-01-15 at 2.34.12 PM.png)
+![Top of the page:](https://github.com/hef9874/api-calendar-hf/blob/main/Assets/Screen%20Shot%202023-01-15%20at%202.34.12%20PM.png)
 
-![Seeing the color coding:](Assets/Screen Shot 2023-01-15 at 2.34.20 PM)
+![Seeing the color coding:](https://github.com/hef9874/api-calendar-hf/blob/main/Assets/Screen%20Shot%202023-01-15%20at%202.34.20%20PM.png)
