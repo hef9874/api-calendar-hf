@@ -7,5 +7,5 @@ This is meant to be used by office workers that want to save appointments on the
 ### Appearance 
 Below are shots of the app in use:
 
-./assets/Screen Shot 2023-01-15 at 2.34.12 PM.png
-./assets/Screen Shot 2023-01-15 at 2.34.20 PM
+![Top of the page:] Assets/Screen Shot 2023-01-15 at 2.34.12 PM.png
+![Seeing the color coding:] Assets/Screen Shot 2023-01-15 at 2.34.20 PM
